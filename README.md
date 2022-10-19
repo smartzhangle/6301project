@@ -73,34 +73,22 @@ DecisionTreeClassifier(ccp_alpha=0.0, class_weight=None, criterion='gini',
                        random_state=12345, splitter='best')
 ```
 ### Quantitative Analysis
-* **Correlation Heatmap**
 
-Pearson correlation matrix, which shows the correlation between the variables on each axis. Correlation ranges from -1 to +1. Values closer to zero means there is no linear trend between two variables; values closer to +1 means stronger positive correlation; values closer to -1 means stronger negative correlation.And the darker color represents stronger correlation between variables, vice versa. 
+**Correlation Heatmap**
+
+Pearson correlation matrix, which shows the correlation between the variables on each axis. Correlation ranges from -1 to +1. Values closer to zero means there is no linear trend between two variables; values closer to +1 means stronger positive correlation; values closer to -1 means stronger negative correlation.
 
 ![Correlation Heatmap](Correlation%20heatmap.png)
 
-* **Metrics used to evaluate your final model (AUC and AIR)**
-
-**AUC Values**
-
-![AUC Values](Evaluate%20AUC.png)
-
 **AIR Values**
 
-We want to use AIR to evaluate whether there is data discrimination. In the Bias Testing, we found that the value of hispanic-to-white is 0.76, which is less than 0.8. In this case, there is discrimination towards hispanic. So, we need to do the bias remediation to improve the performance of the model. After the remediation, we will get the final AIR Values (See next question). 
+We want to use AIR to evaluate whether there is discrimination in our model. In the Bias Testing, we found that the value of hispanic-to-white is 0.76, which is less than 0.8. In this case, there is discrimination towards hispanic people. So, we need to do the bias remediation to improve the performance of the model. After the remediation, we will get the final AIR Values (See below). 
+
+**Initial AIR Values**
 
  | Hispanic-to-white AIR |Black-to-white AIR | Asian-to-white AIR |Female-to-male AIR |
  | --------------------- | ----------------- | ------------------ |-------------------|
  |         0.76          |        0.82       |        1.00        |       1.06        |
-
-* **State the final values, neatly -- as bullets or a table, of the metrics for all data: training, validation, and test data**
-
-**Final AUC Values**
-
-
-| Tr AUC | Val AUC | Test AUC |
-| ------ | ------- | -------- |
-| 0.7837 | 0.7496  |  0.7438  |
 
 **Final AIR Values**
 
@@ -108,38 +96,18 @@ We want to use AIR to evaluate whether there is data discrimination. In the Bias
  | --------------------- | ----------------- | ------------------ |-------------------|
  |         0.83          |        0.85       |        1.00        |       1.02        |
 
-* **Provide any plots related to your data or final model -- be sure to label the plots!**
+**Final AUC Values**
 
-**Histograms for each column in the data dictionary** 
+| Train AUC | Validation AUC | Test AUC |
+| ------ | ------- | -------- |
+| 0.7837 | 0.7496  |  0.7438  |
 
-![Histograms for each column in the data dictionary](Histograms.png)
-
- These histograms visualize the data distribution of each variable which clearly show us the insights of features. For example, in the race graph, “1,2,3,4” refer to 4 different race groups, and y axis refers to the number of each race group.
-
-
-**Iteration Plot (tree depth vs. training and validation AUC)**
-
-![Iteration Plot](Iteration%20Plot.png)
-
-In this plot, AUC refers to how the model would perform in predicting unseen data. We can find that the model with tree depth of 6 has the best performance by analyzing the training AUC and validation AUC.
-
-**Decision Tree for human interpretation**
-
-![Decision Tree](Decision%20Tree.png)
-
-We use the best model,  which is model 6, to plot the tree with a depth 6.
-
-**Variable Importance**
-
-![Variable Importance](Variable%20Importance.png)
-
-This plot shows the importance(which was determined by the degree of influence of each variable on the prediction result) of each variable in a descending order. We can see that the variable PAY_0 plays the most important part in determining the eligibility for a credit line increase. 
 
 **Final Iteration Plot (With Bias Remediation)** 
 
 ![Final Iteration Plot](Final%20Iteration%20Plot.png)
  
-In the bias remediation, we redo the model by adding SEX and RACE to get the value hispanic-to-white AIR greater than 0.8. In this plot, we find our final values of training AUC, validation AUC and hispanic-to-white AIR(tree depth = 6).
+In the bias remediation phase, we retrain the model by testing for bias on SEX and RACE and increase the decision cutoff to get the value of hispanic-to-white AIR greaterthan 0.8. In this plot, we find our final values of training AUC, validation AUC and hispanic-to-white AIR (tree depth = 6).
 
 ### Ethical considerations
 
