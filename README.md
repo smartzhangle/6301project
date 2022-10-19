@@ -110,28 +110,12 @@ In the bias remediation phase, we retrain the model by testing for bias on SEX a
 
 ### Ethical considerations
 
-* **Describe potential negative impacts of using your model:** 
-
-  * **Math or software problems**
-    
-Accuracy. The accuracy of our training model is aroud 70%, there is still almost 40% error. In this case, we may lend money to someone who is not able to pay back.
-
-Lack of data. In our model, we do not have enough data. So, the result we generate will be more random. 
+* **Math or software negative impacts**: The accuracy of our training model is aroud 70%, there is still almost 30% error. In this case, we may lend money to someone who is not able to pay back. In our model, we also do not have enough training data. So, the result we generate will be more random. 
    
-   * **Real-world risks: who, what, when or how**
-     
-Bias.There is no way to take bias into account when employing a model; the findings are just a metric. A model will inevitably have bias, which could cause it to ignore any important connections between the data inputs and the predictions. The model depends heavily on the status of the immediate payment; depending on the individual's past payment behavior, this could have a negative effect.
+* **Real-world negative impacts**: A model will inevitably have bias, which could cause it to harm some customers. 
 
-* **Describe potential uncertainties relating to the impacts of using your model:**
+* **Math or software uncertainties**: We just don't know how a model will perform in the future and it needs to be monitored. 
 
-   * **Math or software problems** 
-    
-Availbility of test data. We are training the test data today, but we are not sure the test data will be available in the future. 
-   
-   * **Real-world risks: who, what, when or how?** 
-   
-Security & Privacy. Computers, data, & ML can all be abused to do harm, or be attacked by bad actors. Some hackers may hack into the model and change some personal information to increase his/her eligibility of credit line increase. For example, by using Backdoors exploited with watermarked data, hackers can easily get the results they want. 
+* **Real-world uncertainties**: Computers, data, & ML can all be abused to do harm, or be attacked by bad actors. Some hackers may hack into the model and change some personal information to increase his/her eligibility of credit line increase. For example, by using Backdoors exploited with watermarked data, hackers can easily get the results they want. We did not test the model for security. 
 
-* **Describe any unexpected or results**
-
-Missing Data: There is no missing data in our training set, but in the real world, it is highly possible that we will encounter missing data. 
+* **Describe any unexpected or results** There is no missing data in our training set, but in the real world, it is highly possible that we will encounter missing data. 
