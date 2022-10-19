@@ -118,4 +118,4 @@ In the bias remediation phase, we retrain the model by testing for bias on SEX a
 
 * **Real-world uncertainties**: Computers, data, & ML can all be abused to do harm, or be attacked by bad actors. Some hackers may hack into the model and change some personal information to increase his/her eligibility of credit line increase. For example, by using Backdoors exploited with watermarked data, hackers can easily get the results they want. We did not test the model for security. 
 
-* **Describe any unexpected or results** There is no missing data in our training set, but in the real world, it is highly possible that we will encounter missing data. 
+* **Describe any unexpected or results**: There is no missing data in our training set, but in the real world, it is highly possible that we will encounter missing data. 
