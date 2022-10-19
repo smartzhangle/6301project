@@ -102,7 +102,6 @@ We want to use AIR to evaluate whether there is discrimination in our model. In 
 | ------ | ------- | -------- |
 | 0.7837 | 0.7496  |  0.7438  |
 
-
 **Final Iteration Plot (With Bias Remediation)** 
 
 ![Final Iteration Plot](Final%20Iteration%20Plot.png)
