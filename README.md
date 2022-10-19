@@ -1,6 +1,5 @@
-# DNSC-6301-Project_Group-21
-DNSC 6301 Project_Group 21
 # Credit Line Increase Model Card
+DNSC-6301-Project_Group-21
 
 ### Basic Information
 
